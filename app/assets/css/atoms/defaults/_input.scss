@@ -1,0 +1,68 @@
+// It is recommended that you do not style checkbox and radio inputs as Firefox's implementation does not respect box-sizing, padding, or width.
+input[type="text"], input[type="password"], input[type="email"], input[type="submit"] {
+  z-index: $high_index;
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+  padding: 6px 12px;
+
+  flex-basis: 100%;
+  width: 100%;
+  height: 100%;
+  max-height: 40px;
+  font-size: 14px;
+  font-family: $default_font;
+  line-height: 1.2;
+
+  color: rgba($default_black, 0.8);
+  background-color: rgba($default_white, 0.9);
+  border: 1px solid rgba($default_black, 0.8);
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba($default_black, 0.075);
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out, .15s;
+}
+
+input[type="file"] {
+  opacity: 0;
+}
+
+input[type="submit"] {
+  display: inline-block;
+  border: 4px solid rgba($slate_blue, 1);
+  border-radius: 4px;
+  touch-action: manipulation;
+  user-select: none;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+// Handle auth/validation below
+input[type="text"], input[type="password"], input[type="email"] {
+  &:focus {
+    border-color: rgba($default_black, 1);
+    box-shadow: inset 0 1px 1px rgba($default_black, .075), 0 0 8px rgba($default_black, 0.6);
+  }
+}
+
+.was-validated {
+  input[type="text"], input[type="password"], input[type="email"] {
+    &:focus {
+      border-color: rgba($default_black, 1);
+      box-shadow: inset 0 1px 1px rgba($default_black, .075), 0 0 8px rgba($default_black, 0.6);
+    }
+
+    &:valid {
+      border-color: rgba($eucalyptus, 1);
+      transition: border-color 0.15s ease-in-out;
+
+      ~ .invalid-feedback {
+        display: none;
+      }
+    }
+
+    &:invalid {
+      border-color: rgba($indian_red, 1);
+      transition: border-color 0.15s ease-in-out;
+    }
+  }
+}

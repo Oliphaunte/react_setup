@@ -1,0 +1,33 @@
+// Colors
+$default_black: rgb(0, 0, 0);
+$default_white: rgb(255, 255, 255);
+$light_grey: rgb(140, 140, 140);
+$dark_grey: rgb(100, 100, 100);
+$indian_red: rgb(229, 92, 92);
+$eucalyptus: rgb(40, 167, 69);
+$slate_blue: rgb(106, 90, 205);
+$cornflower_blue: rgb(97, 169, 237);
+
+// Layout
+$header_height_mobile: 50px;
+$footer_height_mobile: 60px;
+$header_height_tablet: 70px;
+$footer_height_tablet: 60px;
+
+// Breakpoints
+$mobile:            520px;
+$tablet:            700px;
+$tablet_landscape:  1024px;
+$desktop:           1201px;
+
+// Indexes
+$lowest_index:  -1;
+$low_index:     100;
+$medium_index:  400;
+$high_index:    900;
+$higher_index:  990;
+$highest_index: 999;
+
+// Fonts
+$default_font: 'ACaslonPro-Regular', sans-serif;
+$default_font_2: 'ACaslonPro-Regular', sans-serif;

@@ -1,0 +1,60 @@
+button, .button {
+  z-index: $high_index;
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  margin: 10px 0;
+  padding: 6px 12px;
+
+  font-family: $default_font;
+  line-height: 1.2;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: rgba($default_white, 0.8);
+  color: rgba($default_black, 1);
+  touch-action: manipulation;
+  user-select: none;
+
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.button {
+  &--delete {
+    background-color: rgba($default_white, 1);
+    border: 4px solid rgba($indian_red, 1);
+
+    &:hover, &:focus {
+      background-color: rgba($indian_red, 1);
+      color: rgba($default_white, 1);
+    }
+  }
+
+  &--edit {
+    background-color: rgba($default_white, 1);
+
+    &:hover, &:focus {
+      background-color: rgba($dark_grey, 1);
+    }
+  }
+
+  &--new {
+    border: 4px solid rgba($slate_blue, 1);
+
+    &:hover, &:focus {
+      background-color: rgba($slate_blue, 1);
+      color: rgba($default_white, 1);
+    }
+  }
+
+  &--cancel {
+
+  }
+
+  &--submit {
+    &:hover, &:focus {
+      background-color: rgba($slate_blue, 1);
+      color: rgba($default_white, 1);
+    }
+  }
+}
