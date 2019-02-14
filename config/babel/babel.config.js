@@ -17,7 +17,8 @@ module.exports = function(api) {
     plugins = [
       require('@babel/plugin-transform-runtime'),
       require('@babel/plugin-proposal-object-rest-spread'),
-      require('@babel/plugin-proposal-class-properties')
+      require('@babel/plugin-proposal-class-properties'),
+      require('babel-plugin-root-import', { 'rootPathPrefix': '~' })
     ];
 
   if (env === 'development') {
@@ -27,7 +28,7 @@ module.exports = function(api) {
   if (env === 'production') {}
 
   // Cache babel plugin/preset functions
-  // api.cache(true)
+  api.cache(true)
 
   return {
     presets, 
