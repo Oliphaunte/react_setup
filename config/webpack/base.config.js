@@ -2,8 +2,7 @@ require('dotenv').config()
 
 const
   HtmlWebpackPlugin   = require('html-webpack-plugin'),
-  path                = require('path'),
-  webpack             = require('webpack');
+  Path                = require('path');
 
 // Plugins //
 const extractHtml = new HtmlWebpackPlugin({
@@ -15,18 +14,17 @@ const extractHtml = new HtmlWebpackPlugin({
 const 
   jsRules = {
     test: /\.(js|jsx)$/,
-    use: 'babel-loader?cacheDirectory',
-    exclude: /node_modules/
-  },
-  fontRules = {
-    test: /\.(svg|otf|eot|ttf|woff)$/,
-    loader: 'file-loader',
+    loader: 'babel-loader',
+    exclude: /node_modules/,
     options: {
-      name: '[name]-[hash:16].[ext]',
-      publicPath: './assets/fonts',
-      outputPath: './assets/fonts'
+      cacheDirectory: true,
+      configFile: './config/babel/babel.config.js'
     }
   },
+  svgRules = {
+    test: /\.svg$/,
+    loader: 'babel-loader!svg-react-loader'
+  }
   imageRules = {
     test: /\.(png|jpg|gif)$/,
     loader: 'file-loader',
@@ -38,11 +36,14 @@ const
   };
 
 module.exports = {
-  entry: './app/index.js',
+  entry: ['./app/index.js', './app/assets/css/app.scss'],
   output: {
     filename: 'index.bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: Path.resolve(__dirname, 'dist'),
     publicPath: '/',
+    // For chunking hot-reloading files
+    hotUpdateChunkFilename: 'hot/hot-update.js',
+    hotUpdateMainFilename: 'hot/hot-update.js'
   },
   node: {
     fs: 'empty'
@@ -50,8 +51,8 @@ module.exports = {
   module: {
     rules: [
       jsRules,
-      fontRules,
       imageRules,
+      svgRules,
     ]
   },
   plugins: [
@@ -59,7 +60,7 @@ module.exports = {
   ],
   resolve: {
     extensions: ['.js', '.jsx'],
-    alias: { '@': path.join(__dirname) }
+    alias: { '~': Path.join(__dirname) }
   },
 };
 

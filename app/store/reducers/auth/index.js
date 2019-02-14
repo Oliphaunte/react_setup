@@ -1,4 +1,5 @@
-import { IS_LOGGED_IN } from '@/app/store/constants'
+import { IS_LOGGED_IN } from '~/app/store/constants'
+
 const initial_state = { isLoggedIn: false }
 
 export function auth(state=initial_state, action) {

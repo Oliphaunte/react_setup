@@ -5,9 +5,9 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { Provider }                     from 'react-redux'
 import configureStore                   from './store'
 
-import serviceWorkers from '@/app/assets/js/service_workers'
+import serviceWorkers from '~/app/assets/js/service_workers'
 
-import App  from '@/app/views/app'
+import App  from '~/app/views/app'
 
 // Styles
 import './assets/css/app.scss'
