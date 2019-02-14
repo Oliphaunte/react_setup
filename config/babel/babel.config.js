@@ -8,18 +8,20 @@ module.exports = function(api) {
       }
     };
 
-  const
-    presets = [
-      require('@babel/preset-react'),
-      require('@babel/preset-flow'),
-      require('@babel/preset-env', presetEnvOptions)
-    ],
-    plugins = [
-      require('@babel/plugin-transform-runtime'),
-      require('@babel/plugin-proposal-object-rest-spread'),
-      require('@babel/plugin-proposal-class-properties'),
-      require('babel-plugin-root-import', { 'rootPathPrefix': '~' })
-    ];
+  const 
+    config = {
+      presets: [
+        ['@babel/preset-env', presetEnvOptions],
+        ['@babel/preset-react'],
+        ['@babel/preset-flow'],      
+      ],
+      plugins: [
+        ['@babel/plugin-transform-runtime'],
+        ['@babel/plugin-proposal-object-rest-spread'],
+        ['@babel/plugin-proposal-class-properties'],
+        ['babel-plugin-root-import', { 'rootPathPrefix': '~' }]
+      ]
+  }
 
   if (env === 'development') {
     presetEnvOptions['modules'] = false
@@ -28,10 +30,7 @@ module.exports = function(api) {
   if (env === 'production') {}
 
   // Cache babel plugin/preset functions
-  api.cache(true)
+  api ? api.cache(true) : null
 
-  return {
-    presets, 
-    plugins
-  }
+  return config
 }
