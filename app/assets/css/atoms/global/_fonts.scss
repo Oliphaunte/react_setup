@@ -14,9 +14,10 @@ html {
   // -webkit-text-stroke-width: 0.1px !important;
 }
 
-@font-face {
-  font-family: '';
-  font-style: normal;
-  font-weight: 400;
-  src: url('') format('opentype');
-}
+/** Example font-face, if you are not using a third-party api service like Typekit **/
+// @font-face {
+//   font-family: '';
+//   font-style: normal;
+//   font-weight: 400;
+//   src: url('') format('opentype');
+// }

@@ -59,7 +59,7 @@ module.exports = Merge(BASE_CONFIG, {
     publicPath: '/',
     contentBase: Path.resolve(__dirname, 'dist'),
     historyApiFallback: true,
-    port: 8000,
+    port: 8001,
     progress: true,
     hot: true,
     // Activate if using a proxy, obviously
