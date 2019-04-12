@@ -1,6 +1,6 @@
 import React                            from 'react'
 import ReactDOM                         from 'react-dom'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 // Store
 import { Provider }                     from 'react-redux'
 import configureStore                   from './store'
@@ -23,7 +23,7 @@ if (typeof window !== 'undefined') {
       </BrowserRouter>
     </Provider>, 
     document.getElementById('app')
-  );
+  )
 }
 
 if (process.env.NODE_ENV === 'production') {

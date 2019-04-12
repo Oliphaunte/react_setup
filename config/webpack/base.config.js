@@ -2,13 +2,13 @@ require('dotenv').config()
 
 const
   HtmlWebpackPlugin   = require('html-webpack-plugin'),
-  Path                = require('path');
+  Path                = require('path')
 
 // Plugins //
 const extractHtml = new HtmlWebpackPlugin({
   template: 'app/index.html',
   filename: 'index.html',
-});
+})
 
 // Rules //
 const 
@@ -33,13 +33,17 @@ const
       publicPath: './assets/images',
       outputPath: './assets/images'
     }
-  };
+  }
 
 module.exports = {
-  entry: ['./app/index.js', './app/assets/css/app.scss'],
+  entry: [
+    './app/index.js', 
+    './app/assets/css/app.scss'
+  ],
   output: {
     filename: 'index.bundle.js',
-    path: Path.resolve(__dirname, 'dist'),
+    chunkFilename: '[name].bundle.js',
+    path: Path.join(process.cwd(), process.env.BUILD_PATH),
     publicPath: '/',
     // For chunking hot-reloading files
     hotUpdateChunkFilename: 'hot/hot-update.js',
@@ -62,5 +66,4 @@ module.exports = {
     extensions: ['.js', '.jsx'],
     alias: { '~': Path.join(__dirname) }
   },
-};
-
+}

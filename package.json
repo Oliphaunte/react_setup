@@ -5,9 +5,9 @@
   "license": "MIT",
   "scripts": {
     "test:": "jest",
-    "start:dev": "",
-    "start": "webpack-dev-server --config ./config/webpack/dev.config.js",
-    "build": "rm -rf dist && webpack -p --config ./webpack.prod.config.js",
+    "start:dev": "webpack-dev-server --config ./config/webpack/dev.config.js",
+    "start:prod": "yarn run build && http-server dist",
+    "build": "rm -rf dist && webpack -p --config ./config/webpack/prod.config.js",
     "lint:es": "./node_modules/.bin/eslint -c ./config/linters/.eslintrc.js ./",
     "lint:style": "stylelint './app/assets/css/**/*.scss' --config ./config/linters/.stylelintrc.js",
     "lint:all": "yarn run lint:es && yarn run lint:style",
@@ -16,7 +16,7 @@
   "engines": {
     "node": ">=11.10.0",
     "npm": ">=6.7.0",
-    "yarn": ">=1.13.0"
+    "yarn": ">=1.15.0"
   },
   "dependencies": {
     "@babel/core": "^7.4.3",
@@ -53,6 +53,7 @@
     "file-loader": "^3.0.1",
     "flow-bin": "^0.96.0",
     "html-webpack-plugin": "^3.2.0",
+    "http-server": "^0.11.1",
     "jest": "^24.7.1",
     "mini-css-extract-plugin": "^0.6.0",
     "node-sass": "^4.9.2",
@@ -72,6 +73,7 @@
     "webpack": "^4.16.4",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.3.1",
-    "webpack-merge": "^4.1.4"
+    "webpack-merge": "^4.1.4",
+    "workbox-webpack-plugin": "^4.2.0"
   }
 }
