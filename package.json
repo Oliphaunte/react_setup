@@ -43,6 +43,7 @@
     "axios": "^0.18.0",
     "babel-jest": "^24.7.1",
     "babel-plugin-root-import": "^6.1.0",
+    "copy-webpack-plugin": "^5.0.2",
     "css-loader": "^2.1.0",
     "cssnano": "^4.0.5",
     "dotenv": "^7.0.0",
