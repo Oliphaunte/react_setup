@@ -1,8 +1,5 @@
 import React  from 'react'
-import { 
-  Route, 
-  Switch 
-} from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 
 import Header       from '~/app/views/components/layout/header'
 import Footer       from '~/app/views/components/layout/footer'

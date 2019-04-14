@@ -1,10 +1,9 @@
-
 const 
   Path          = require('path'),
   Webpack       = require('webpack'),
   Merge         = require('webpack-merge'),
   GlobImporter  = require('node-sass-glob-importer'),
-  BASE_CONFIG   = require('./base.config');
+  BASE_CONFIG   = require('./base.config')
 
 const options = {
   disableImportOnce: true
@@ -16,7 +15,7 @@ const webpackEnv = new Webpack.DefinePlugin({
     'NODE_ENV': JSON.stringify(process.env.ENV_DEV),
     'PUBLIC_URL': JSON.stringify(process.env.PUBLIC_URL_DEV)
   }
-});
+})
 
 // Loaders
 const
@@ -39,7 +38,7 @@ const
         path: './app/assets/css/postcss.config.js'
       }
     }
-  };
+  }
 // Rules //
 const
   cssRules = { 
@@ -50,7 +49,7 @@ const
       postcssLoader,
       sassLoader
     ],
-  };
+  }
 
 module.exports = Merge(BASE_CONFIG, {
   mode: 'development',
@@ -62,7 +61,7 @@ module.exports = Merge(BASE_CONFIG, {
     port: 8001,
     progress: true,
     hot: true,
-    // Activate if using a proxy, obviously
+    // Activate if using a proxy
     // proxy: [{
     //   context: [''],
     //   target: 'http://localhost:3232',
@@ -80,4 +79,4 @@ module.exports = Merge(BASE_CONFIG, {
     new Webpack.HotModuleReplacementPlugin(),
     new Webpack.NoEmitOnErrorsPlugin(),
   ],
-});
+})

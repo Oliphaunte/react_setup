@@ -8,8 +8,11 @@
 > 6. Minimal webpack configuration with SOC (Development & Production)
 > 7. Priv keys stored in .env
 
-### SETUP -- Front-end
+### QUICK SETUP -- Front-end
 1. Clone Repo
 2. Run `touch .env` and copy input from `.env.example` into it
 3. Run `yarn install`
 4. Run `yarn start` and open browser to port 8000
+
+### MORE SETUP
+1. Update the manifest.json in app/ with your pwa configurations

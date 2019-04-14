@@ -3,6 +3,7 @@ module.exports = function(api) {
   const
     presetEnvOptions = {
       'useBuiltIns': 'entry',
+      "corejs": "2",
       'targets': {
         'browsers': ['last 2 versions']
       }
