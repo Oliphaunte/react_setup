@@ -1,12 +1,12 @@
-import React  from 'react'
+import React, { Suspense }  from 'react'
 import { Route, Switch } from 'react-router-dom'
 
-import Header       from '~/app/views/components/layout/header'
-import Footer       from '~/app/views/components/layout/footer'
-import Home         from '~/app/views/pages/layout/home'
-import Private      from '~/app/views/pages/private'
-import PrivateRoute from '~/app/views/pages/layout/private_route'
-import Error404     from '~/app/views/pages/errors/404'
+const Header  = React.lazy(() => import('~/app/views/components/layout/header'))
+const Footer  = React.lazy(() => import('~/app/views/components/layout/footer'))
+const Home  = React.lazy(() => import('~/app/views/pages/layout/home'))
+const Private = React.lazy(() => import('~/app/views/pages/private'))
+const PrivateRoute  = React.lazy(() => import('~/app/views/pages/layout/private_route'))
+const Error404  = React.lazy(() => import('~/app/views/pages/errors/404'))
 
 class App extends React.Component {
   constructor(props) {
@@ -16,7 +16,7 @@ class App extends React.Component {
   
   render() {
     return (
-      <React.Fragment>
+      <Suspense fallback={<div>Loading...</div>}>
         <Header />
           
           <Switch>
@@ -26,7 +26,7 @@ class App extends React.Component {
           </Switch>
         
         <Footer />
-      </React.Fragment>
+      </Suspense>
     )
   }
 }
