@@ -2,13 +2,18 @@ require('dotenv').config()
 
 const
   HtmlWebpackPlugin   = require('html-webpack-plugin'),
+  CopyWebpackPlugin   = require('copy-webpack-plugin'),
   Path                = require('path')
 
 // Plugins //
-const extractHtml = new HtmlWebpackPlugin({
-  template: 'app/index.html',
-  filename: 'index.html',
-})
+const 
+  extractHtml = new HtmlWebpackPlugin({
+    template: 'app/index.html',
+    filename: 'index.html',
+  }),
+  copyWebpack = new CopyWebpackPlugin([
+    { from: 'app/manifest.json', to: './'}
+  ])
 
 // Rules //
 const 
@@ -61,6 +66,7 @@ module.exports = {
   },
   plugins: [
     extractHtml,
+    copyWebpack
   ],
   resolve: {
     extensions: ['.js', '.jsx'],

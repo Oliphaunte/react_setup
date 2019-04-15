@@ -1,6 +1,8 @@
 label {
-  display: block;
+  .default {
+    display: block;
 
-  font-family: $default_font;
-  color: rgba($default_black, 1);
+    font-family: $default_font;
+    color: rgba($default_black, 1);
+  }
 }

@@ -1,3 +1,5 @@
 article {
-  flex-basis: 100%;
+  &.default {
+    flex-basis: 100%;
+  }
 }

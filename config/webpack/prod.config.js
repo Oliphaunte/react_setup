@@ -5,7 +5,6 @@ const
   Webpack               = require('webpack'),
   GlobImporter          = require('node-sass-glob-importer'),
   WorkboxPlugin         = require('workbox-webpack-plugin'),
-  CopyWebpackPlugin     = require('copy-webpack-plugin'),
   BASE_CONFIG           = require('./base.config')
 
 // Plugins //
@@ -28,9 +27,6 @@ const
   extractCSS = new MiniCssExtractPlugin({
     filename: 'index.bundle.css',
   }),
-  copyWebpack = new CopyWebpackPlugin([
-    { from: 'app/manifest.json', to: './'}
-  ]),
   workbox =  new WorkboxPlugin.GenerateSW({
     swDest: 'service-worker.js',
     clientsClaim: true,
@@ -49,7 +45,7 @@ const
     loader: 'postcss-loader',
     options: {
       config: {
-        path: './app/assets/css/postcss.config.js'
+        path: './app/assets/css/post  CopyWebpackPlugin     = require('copy-webpack-plugin'),ss.config.js'
       }
     }
   },
@@ -96,7 +92,6 @@ module.exports = Merge(BASE_CONFIG, {
     extractCSS,
     hashedModules,
     webpackEnv,
-    copyWebpack,
     workbox,
     new Webpack.optimize.OccurrenceOrderPlugin(true),
   ]
