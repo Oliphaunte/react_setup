@@ -19,7 +19,7 @@ if (typeof window !== 'undefined') {
   ReactDOM.render (
     <Provider store={store}>
       <BrowserRouter basename={process.env.PUBLIC_URL} forceRefresh={!supportsHistory}>
-          <App />
+        <App />
       </BrowserRouter>
     </Provider>, 
     document.getElementById('app')
