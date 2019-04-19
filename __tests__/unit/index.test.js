@@ -3,9 +3,8 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter } from "react-router-dom"
 import { Provider } from 'react-redux'
 import App from '~./app/views/app'
-import configureStore from '~./app/store'
+import store from '~./app/store'
 
-const store = configureStore()
 const supportsHistory = 'pushState' in window.history
 
 it('renders without crashing', () => {

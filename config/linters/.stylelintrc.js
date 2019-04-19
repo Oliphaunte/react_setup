@@ -10,7 +10,7 @@ module.exports = {
       ['em', 'rem', 'deg', 's'],
       { 'ignoreProperties': {
         '%': ['/width|height|flex|transform|left|right|bottom|top/'],
-        'px': ['/border|box/']
+        'px': ['/border|box|transform|padding|margin/']
       }}
     ],
     // SCSS

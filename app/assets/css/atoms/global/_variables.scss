@@ -9,16 +9,17 @@ $slate_blue: rgb(106, 90, 205);
 $cornflower_blue: rgb(97, 169, 237);
 
 // Layout
-$header_height_mobile: 50px;
-$footer_height_mobile: 60px;
-$header_height_tablet: 70px;
-$footer_height_tablet: 60px;
+$header_height_mobile: 3.125rem;
+$footer_height_mobile: 3.75rem;
+$header_height_tablet: 4.375rem;
+$footer_height_tablet: 3.75rem;
 
 // Breakpoints
-$mobile:            520px;
-$tablet:            700px;
-$tablet_landscape:  1024px;
-$desktop:           1201px;
+$mobile:            32.5rem;
+$tablet:            43.75rem;
+$tablet_landscape:  64rem;
+$desktop:           75rem;
+$max_breakpoint:    87.5rem;
 
 // Indexes
 $lowest_index:  -1;
