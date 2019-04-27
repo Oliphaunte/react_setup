@@ -1,11 +1,16 @@
 main {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   margin: 50px 0 0;
   min-height: calc(100% - (#{$header_height_mobile} + #{$footer_height_mobile}));
 
   @include breakpoint($tablet) {
+    grid-template-columns: repeat(6, 1fr);
     margin: 70px 0 0;
     min-height: calc(100% - (#{$header_height_tablet} + #{$footer_height_tablet}));
+  }
+
+  @include breakpoint($desktop) {
+    grid-template-columns: repeat(12, 1fr);
   }
 }

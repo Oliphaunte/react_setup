@@ -7,7 +7,7 @@ module.exports = {
     'indentation': 2,
     'number-leading-zero': null,
     'unit-whitelist': [
-      ['em', 'rem', 'deg', 's'],
+      ['em', 'rem', 'deg', 's', 'fr'],
       { 'ignoreProperties': {
         '%': ['/width|height|flex|transform|left|right|bottom|top/'],
         'px': ['/border|box|transform|padding|margin/']

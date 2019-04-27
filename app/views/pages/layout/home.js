@@ -10,9 +10,9 @@ class Home extends React.Component {
 
   render() {
     return (
-      <main className="t__home-page">
+      <section className='t__home-page'>
         <div> Home Page </div>
-      </main>
+      </section>
     )
   }
 }

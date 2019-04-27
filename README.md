@@ -10,9 +10,9 @@
 
 ### QUICK SETUP -- Front-end
 1. Clone Repo
-2. Run `touch .env` and copy input from `.env.example` into it
+2. Run `cp .env.example .env` for unix enviornments
 3. Run `yarn install`
-4. Run `yarn start` and open browser to port 8000
+4. Run `yarn start` and open browser to port 8001
 
 ### MORE SETUP
-1. Update the manifest.json in app/ with your pwa configurations
+1. Update the manifest.json in app/ with your pwa configurations to utilize the power of pwa
