@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react'
 import { Route, Switch } from 'react-router-dom'
+import Accessibility from '~/app/assets/js/accessibility'
 
 const Header = React.lazy(() => import('~/app/views/components/layout/header'))
 const Footer = React.lazy(() => import('~/app/views/components/layout/footer'))
@@ -13,6 +14,10 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {}
+  }
+
+  componentDidMount() {
+    window.addEventListener('keydown', Accessibility.handleFirstTab)
   }
 
   render() {

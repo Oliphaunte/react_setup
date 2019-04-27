@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux' 
-import { fetchAuth } from '~/app/store/auth'
+import { fetchAuth } from '~/app/store/auth/actions'
 
 const LoginPage = (props) => {
   useEffect(() => {
@@ -8,9 +8,11 @@ const LoginPage = (props) => {
   })
 
   return (
-    <section>
-      <div>Login Page</div>
-    </section>
+    <main>
+      <section>
+        <div>Login Page</div>
+      </section>
+    </main>
   )
 }
 
