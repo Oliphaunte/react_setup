@@ -1,26 +1,3 @@
 header {
-  z-index: $higher_index;
-  
-  display: flex;
-  justify-content: space-between;
-  flex-basis: 100%;
-  position: absolute;
-  top: 0;
-  left: 0; 
-  right: 0; 
-
-  margin: 0 auto;
-  padding: 0 10px;
-  height: $header_height_mobile;
-  background-color: rgba(255, 255, 255, 0.9);
-
-  z-index: 990;
-  box-sizing: border-box;
-
-
-  @include breakpoint($tablet) {
-    padding: 0 20px;
-    height: $header_height_tablet;
-    max-width: $max_breakpoint;
-  }
+  grid-area: header;
 }

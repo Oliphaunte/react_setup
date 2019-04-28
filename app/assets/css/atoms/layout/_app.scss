@@ -1,0 +1,27 @@
+div#app {
+  height: 100%;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 100px auto 100px;
+  grid-template-areas:
+    "header header header"
+    "main main main"
+    "footer footer footer";
+
+  @include breakpoint($tablet) {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas:
+      "header header header header header header"
+      "main main main main main main"
+      "footer footer footer footer footer footer";
+  }
+
+  @include breakpoint($desktop) {
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-areas:
+      "header header header header header header header header header"
+      "main main main main main main main main main"
+      "footer footer footer footer footer footer footer footer footer";
+  }
+}

@@ -1,0 +1,73 @@
+.t__project-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  .project-header-hamburger {
+    z-index: $high_index;
+  }
+
+  .project-header-fade {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(black, 0.6);
+
+    &-enter {
+      opacity: 0;
+    }
+
+    &-enter-active {
+      opacity: 1;
+      transition: all 0.3s
+    }
+
+    &-exit {
+      opacity: 1
+    }
+
+    &-exit-active {
+      opacity: 0;
+      transition: all 0.3s;
+    }
+  }
+
+  .project-header-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 280px;
+    background-color: rgba(white, 1);
+
+    &-enter {
+      opacity: 0;
+      max-width: 0;
+    }
+
+    &-enter-active {
+      opacity: 1;
+      max-width: 280px;
+      transition: all 0.3s;
+    }
+
+    &-exit {
+      opacity: 1;
+      max-width: 280px;
+    }
+
+    &-exit-active {
+      opacity: 0;
+      max-width: 0;
+      transition: all 0.3s;
+    }
+  }
+
+  @include breakpoint($tablet) {
+    .project-header-hamburger {
+      display: none;
+    }
+  }
+}

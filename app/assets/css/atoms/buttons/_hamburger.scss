@@ -1,0 +1,49 @@
+.button {
+  &__hamburger {
+    width: 60px;
+    height: 45px;
+    position: relative;
+
+    span {
+      display: block;
+      position: absolute;
+      height: 6px;
+      width: 100%;
+      background: rgba($default_black, 1);
+      border-radius: 9px;
+      opacity: 1;
+      left: 0;
+      transform: rotate(0deg);
+      transition: 0.25s ease-in-out;
+    }
+
+    span:nth-child(1) {
+      top: 0px;
+    }
+    
+    span:nth-child(2) {
+      top: 15px;
+    }
+    
+    span:nth-child(3) {
+      top: 30px;
+    }
+
+    &--active {
+      span:nth-child(1) {
+        top: 18px;
+        transform: rotate(135deg);
+      }
+      
+      span:nth-child(2) {
+        opacity: 0;
+        left: 60px;
+      }
+      
+      span:nth-child(3) {
+        top: 18px;
+        transform: rotate(-135deg);
+      }
+    }
+  }
+}

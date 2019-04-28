@@ -1,13 +1,3 @@
 footer {
-  z-index: $higher_index;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: $footer_height_mobile;
-
-  box-sizing: border-box;
-
-  @include breakpoint($tablet) {
-    height: $footer_height_tablet;
-  }
+  grid-area: footer;
 }
